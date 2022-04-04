@@ -31,27 +31,41 @@ for line in lines:
     secondblock=splitter[1].split(' ')[1]
     firstlist.append(firstblock)
     secondlist.append(secondblock)
-    print(firstblock+" -> "+secondblock+"\n")
+    #print(firstblock+" -> "+secondblock+"\n")
   elif count>=15 and line.find(squarebracket)!=-1:
     fineline=line
     splitter=fineline.split(' ')
     blocknumber=splitter[2]
     localblockinfo=[]
     localblockinfo.append(blocknumber)
+    localblockinfo.append("\n")
     splitline=line
     parts=splitline.split('\l')
     for part in parts:
       for opcode in opcodes:
         if part.find(opcode)!=-1:
           localblockinfo.append(opcode)
+          localblockinfo.append("\n")
           break
         else:
           continue
     blockinfo.extend(localblockinfo)
-    print(localblockinfo)
+    #print(localblockinfo)
     
-    
-print(blockinfo)    
+fwrite=open("blocks.txt","w")
+for x in blockinfo:
+  fwrite.write(x)
+fwrite.close()
+
+fwrite=open("order.txt","w")
+
+for x, y in zip(firstlist,secondlist):
+  fwrite.write(x+" "+y+"\n")
+  
+fwrite.close()
+
+
+#print(blockinfo)    
     
 
 
