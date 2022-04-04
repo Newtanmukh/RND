@@ -1,0 +1,89 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+//this is basically the node of each block.
+//This is the data structure for the basic block of a CFG.
+
+
+struct Node{
+int id;
+vector<string> store;
+Node* left;
+Node* right;
+//constructor
+Node(int x){
+  id=x;  
+  left=NULL;
+  right=NULL;
+  }
+}
+
+vector<vector<string>>all_paths;
+
+
+void dfs(Node* node,vector<string>local,vector<int>checknode)
+{
+  if(node==NULL)
+  { return;}
+
+ //checking if the node had already been travelled once in this particular traversal.
+      if(count(checknode.begin(),checknode.end(),node->id))
+      {
+          return;
+      }
+  
+     if(node->left==NULL && node->right==NULL)
+     {
+           checknode.push_back(node->id);
+           for(auto &x : node->store)
+          {local.push_back(x);}
+           all_paths.push_back(local);
+           return;
+     }
+
+    checknode.push_back(node->id);
+  
+    for(auto &x : node->store)
+      {
+          local.push_back(x);
+      }
+
+      dfs(node->left,local,checknode);
+      dfs(node->right,local,checknode);
+
+}
+
+
+int main() {
+
+//*****************************
+//code for extracting CFG. 
+//*****************************
+
+  
+vector<int> checknodelocal;
+  vector<string> opcodesofeachloop;
+  
+dfs(node,opcodesofeachloop,checknodelocal);
+
+map<pair<string,pair<string,string>>,int> frequency;
+
+int i;
+  
+  for(auto &each_path : all_paths)
+    {
+     for(i=0;i<each_path.size()-2;i++)
+       {
+          //to store the frequency of each 3 - gram
+         frequency[make_pair(each_path[i],make_pair(each_path[i+1],each_path[i+1]))]++; 
+       }      
+    }
+    
+  //further write code to extract uniquee/most occuring trigrams.
+  
+}
+
+
+
+
+//     SVC(kernel='linear', C = 1)
