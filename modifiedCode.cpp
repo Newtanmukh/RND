@@ -54,7 +54,7 @@ int main()
 {
   vector<vector<string> > all_paths;
   // code for extracting CFG.
-  //*****************************
+  //***********
   ifstream inFile;
   inFile.open("blocks.txt");
 
@@ -70,14 +70,16 @@ int main()
     orderdata.push_back(str);
   }
 
-  for (int i = 0; i < orderdata.size(); i++)
+  int n = orderdata.size();
+  for (int i = 0; i < n; i++)
   {
     if (orderdata[i][0] >= '0' && orderdata[i][0] <= '9')
     {
       int blocknumber = stoi(orderdata[i]);
       int j = i + 1;
       vector<string> blockopcodes;
-      while (orderdata[j][0] < '0' || orderdata[j][0] > '9')
+
+      while (j<n && (orderdata[j][0] < '0' || orderdata[j][0] > '9'))
       {
         blockopcodes.push_back(orderdata[j]);
         j++;
@@ -99,12 +101,12 @@ int main()
     }
   }
 
-  //*****************************
+  //***********
 
   vector<int> checknodelocal;
   vector<string> opcodesofeachloop;
 
-  /*
+  
     for(auto x:mapper)
       {
         cout<<x.first<<endl;
@@ -112,7 +114,7 @@ int main()
           {
            cout<<p<<endl;
           }
-      }*/
+      }
 
   // dfs(node,opcodesofeachloop,checknodelocal);
 
