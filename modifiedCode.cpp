@@ -8,53 +8,60 @@ struct Node
 {
   int id;
   vector<string> store;
-  Node *left;
-  Node *right;
+  int left;
+  int right;
   // constructor
   Node(int x)
   {
     id = x;
-    left = NULL;
-    right = NULL;
+    left = -1;
+    right = -1;
   }
 };
 
-void dfs(Node *node, vector<string> local, vector<int> checknode, vector<vector<string> > &all_paths)
+void dfs(int node, vector<string> local, vector<int> checknode, vector<vector<string> > &all_paths,map<int, Node *> &mapper)
 {
-  if (node == NULL)
+  if (node == -1)
     return;
 
   // checking if the node had already been travelled once in this particular traversal.
-  if (count(checknode.begin(), checknode.end(), node->id))
-  {
+  
+  if (count(checknode.begin(), checknode.end(), node))
+  {   checknode.push_back(node);
+    
+    for(auto p:mapper[node]->store)
+      {local.push_back(p);}
+    
+    
+     all_paths.push_back(local);
+    
     return;
   }
 
   // visited
-  checknode.push_back(node->id);
+  checknode.push_back(node);
 
   // leaf node
-  if (node->left == NULL && node->right == NULL)
-  {
-    all_paths.push_back(node->store);
+  if (mapper[node]->left == -1 && mapper[node]->right == -1)
+  { for(auto p:mapper[node]->store)
+      {local.push_back(p);}
+    all_paths.push_back(local);  
     return;
   }
 
-  // for(auto &x : node->store)
-  //   {
-  //       local.push_back(x);
-  //   }
-  local.insert(local.end(), node->store.begin(), node->store.end());
+ 
+ for(auto p:mapper[node]->store)
+      {local.push_back(p);}
 
-  dfs(node->left, local, checknode, all_paths);
-  dfs(node->right, local, checknode, all_paths);
+  dfs(mapper[node]->left, local, checknode, all_paths,mapper);
+  dfs(mapper[node]->right, local, checknode, all_paths,mapper);
 }
 
 int main()
 {
   vector<vector<string> > all_paths;
   // code for extracting CFG.
-  //***********
+  //***
   ifstream inFile;
   inFile.open("blocks.txt");
 
@@ -87,11 +94,13 @@ int main()
 
       Node *newnode = new Node(blocknumber);
 
-      // for (auto &x : blockopcodes)
-      // {
-      //   newnode->store.push_back(x);
-      // }
-      newnode->store.insert(newnode->store.end(), blockopcodes.begin(), blockopcodes.end());
+     
+      
+
+    for(auto &x : blockopcodes)
+      {
+        newnode->store.push_back(x);
+      }
 
       mapper[blocknumber] = newnode;
     }
@@ -100,38 +109,63 @@ int main()
       continue;
     }
   }
+inFile.close();
+  
+  ifstream inFilew;
+  string first,second;
+  inFilew.open("order.txt");
 
-  //***********
+  while(inFilew >> first>> second)
+  { 
+    int x,y;
+    x=stoi(first);
+    y=stoi(second);
+    cout<<x<<" "<<y<<endl;
+    if(mapper[x]->left==-1)
+    {mapper[x]->left=y;}
+    else
+    {
+      mapper[x]->right=y;
+    }
+    
+  }
+  inFilew.close();
+
+  
+  //***
 
   vector<int> checknodelocal;
   vector<string> opcodesofeachloop;
 
+   dfs(0,opcodesofeachloop,checknodelocal,all_paths,mapper);
+
+
+
+  int i;
+int count=0;
+  cout<<"the total number of paths are :" <<all_paths.size()<<endl;
+   for(auto &each_path : all_paths)
+  {
+    cout<<"this is the path number : "<<count<<endl;
+    cout<<"The number of instructions on this path are : "<<each_path.size()<<endl;
+    
+   for(i=0;i<each_path.size()-2;i++)
+ {
   
-    for(auto x:mapper)
+  cout<<each_path[i]<<" "<<each_path[i+1]<<" "<<each_path[i+1]<<" "<<endl;
+}
+    printf("\n");
+    count++;
+  } 
+
+  /* for(auto x:mapper)
       {
         cout<<x.first<<endl;
+        cout<<x.second->left<<endl;
+        cout<<x.second->right<<endl;
         for(auto p:x.second->store)
           {
            cout<<p<<endl;
           }
-      }
-
-  // dfs(node,opcodesofeachloop,checknodelocal);
-
-  map<pair<string, pair<string, string> >, int> frequency;
-
-  int i;
-
-  // for(auto &each_path : all_paths)
-  //{
-  // for(i=0;i<each_path.size()-2;i++)
-  //{
-  // to store the frequency of each 3 - gram
-  // frequency[make_pair(each_path[i],make_pair(each_path[i+1],each_path[i+1]))]++;
-  //}
-  //}
-
-  // further write code to extract uniquee/most occuring trigrams.
+      } */
 }
-
-//     SVC(kernel='linear', C = 1)
