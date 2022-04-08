@@ -1,0 +1,519 @@
+0 7
+0 1
+1 2
+1 11
+2 3
+3 4
+3 23
+4 5
+4 20
+5 6
+7 8
+7 16
+8 9
+8 13
+9 5
+9 10
+10 2
+11 17
+11 12
+12 5
+12 13
+13 21
+13 14
+14 5
+14 15
+15 6
+16 3
+17 22
+17 18
+18 5
+18 19
+19 6
+20 6
+21 6
+22 6
+23 6
+23 24
+24 6
+the total number of paths are :23
+this is the path number : 0
+The number of instructions on this path are : 13
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or jz jz 
+jz jz jz 
+jz or or 
+or xor xor 
+xor add add 
+
+this is the path number : 1
+The number of instructions on this path are : 20
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or jz jz 
+jz jz jz 
+jz or or 
+or or or 
+or mov mov 
+mov mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz test test 
+test xor xor 
+xor add add 
+
+this is the path number : 2
+The number of instructions on this path are : 22
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or jz jz 
+jz jz jz 
+jz or or 
+or or or 
+or mov mov 
+mov mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz test test 
+test mov mov 
+mov call call 
+call mov mov 
+mov add add 
+
+this is the path number : 3
+The number of instructions on this path are : 24
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or jz jz 
+jz jz jz 
+jz or or 
+or or or 
+or mov mov 
+mov mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call test test 
+test mov mov 
+mov jz jz 
+jz add add 
+
+this is the path number : 4
+The number of instructions on this path are : 27
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or jz jz 
+jz jz jz 
+jz or or 
+or or or 
+or mov mov 
+mov mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call test test 
+test mov mov 
+mov jz jz 
+jz mov mov 
+mov call call 
+call mov mov 
+mov add add 
+
+this is the path number : 5
+The number of instructions on this path are : 19
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or jz jz 
+jz jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call or or 
+or add add 
+
+this is the path number : 6
+The number of instructions on this path are : 18
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or jz jz 
+jz jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz test test 
+test jz jz 
+jz xor xor 
+xor add add 
+
+this is the path number : 7
+The number of instructions on this path are : 21
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or jz jz 
+jz jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz test test 
+test jz jz 
+jz mov mov 
+mov call call 
+call mov mov 
+mov or or 
+or add add 
+
+this is the path number : 8
+The number of instructions on this path are : 17
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or jz jz 
+jz xor xor 
+xor mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz test test 
+test xor xor 
+xor add add 
+
+this is the path number : 9
+The number of instructions on this path are : 19
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or jz jz 
+jz xor xor 
+xor mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz test test 
+test mov mov 
+mov call call 
+call mov mov 
+mov add add 
+
+this is the path number : 10
+The number of instructions on this path are : 21
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or jz jz 
+jz xor xor 
+xor mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call test test 
+test mov mov 
+mov jz jz 
+jz add add 
+
+this is the path number : 11
+The number of instructions on this path are : 24
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or jz jz 
+jz xor xor 
+xor mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call test test 
+test mov mov 
+mov jz jz 
+jz mov mov 
+mov call call 
+call mov mov 
+mov add add 
+
+this is the path number : 12
+The number of instructions on this path are : 17
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or or or 
+or mov mov 
+mov mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz test test 
+test xor xor 
+xor add add 
+
+this is the path number : 13
+The number of instructions on this path are : 19
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or or or 
+or mov mov 
+mov mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz test test 
+test mov mov 
+mov call call 
+call mov mov 
+mov add add 
+
+this is the path number : 14
+The number of instructions on this path are : 21
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or or or 
+or mov mov 
+mov mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call test test 
+test mov mov 
+mov jz jz 
+jz add add 
+
+this is the path number : 15
+The number of instructions on this path are : 24
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or or or 
+or mov mov 
+mov mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call test test 
+test mov mov 
+mov jz jz 
+jz mov mov 
+mov call call 
+call mov mov 
+mov add add 
+
+this is the path number : 16
+The number of instructions on this path are : 19
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or or or 
+or jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call or or 
+or add add 
+
+this is the path number : 17
+The number of instructions on this path are : 18
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or or or 
+or jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz test test 
+test jz jz 
+jz xor xor 
+xor add add 
+
+this is the path number : 18
+The number of instructions on this path are : 20
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or or or 
+or jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz test test 
+test jz jz 
+jz mov mov 
+mov call call 
+call mov mov 
+mov add add 
+
+this is the path number : 19
+The number of instructions on this path are : 13
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or or or 
+or jz jz 
+jz or or 
+or xor xor 
+xor add add 
+
+this is the path number : 20
+The number of instructions on this path are : 20
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or or or 
+or jz jz 
+jz or or 
+or mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz mov mov 
+mov mov mov 
+mov call call 
+call or or 
+or add add 
+
+this is the path number : 21
+The number of instructions on this path are : 19
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or or or 
+or jz jz 
+jz or or 
+or mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz test test 
+test jz jz 
+jz xor xor 
+xor add add 
+
+this is the path number : 22
+The number of instructions on this path are : 22
+and push push 
+push sub sub 
+sub mov mov 
+mov mov mov 
+mov mov mov 
+mov or or 
+or or or 
+or jz jz 
+jz or or 
+or mov mov 
+mov mov mov 
+mov call call 
+call jz jz 
+jz test test 
+test jz jz 
+jz mov mov 
+mov call call 
+call mov mov 
+mov or or 
+or add add 
+
